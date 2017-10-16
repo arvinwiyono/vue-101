@@ -1,6 +1,5 @@
 describe("pow", function(){
 	
-
 	describe("raises x to power n", function(){
 
 		before(() => alert('Testing started - before all tests'));
