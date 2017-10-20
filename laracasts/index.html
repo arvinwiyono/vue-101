@@ -2,13 +2,24 @@
 <html>
 	<head>
 		<title>Laracasts - VueJS Step by Step</title>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script type="text/javascript" src="./scripts/vue.js"></script>
 	</head>
 	<body>
 		<div id="root">
 			<input type="text" id="input" v-model="message">
 			<!-- The value in p will be automatically updated -->
 			<p>The value of the input is: {{message}}.</p>
+			<hr>
+			<ul>
+				<li v-for="name in names" v-text="name"></li>
+				<!-- Can be like this too -->
+				<!-- <li v-for="name in names">{{name}}</li> -->
+			</ul>
+			<input type="text" v-model="newName">
+			<!-- <button v-on:click="addName">Add Name</button> -->
+			
+			<!-- Using short hand notation -->
+			<button @click="addName">Add Name</button>
 		</div>
 
 		<script type="text/javascript">
@@ -18,12 +29,34 @@
 			// }
 			// document.querySelector('#input').value = data.message;
 
-			new Vue({
+			var app = new Vue({
 				el: '#root',
 				data: {
-					message: 'Hello, World!'
+					newName: '',
+					message: 'Hello, World!',
+					names: ['Joe', 'Mary', 'Jane', 'Jack']
+				},
+				methods:{
+					addName(){
+						console.log('Adding name: ' + this.newName);
+						this.names.push(this.newName);
+						this.newName = '';
+					}
+				},
+				mounted(){
+					console.log('Ready!');
+					
+					// Traditional way of adding a name to the list
+					// document.querySelector('#add-name-btn').addEventListener('click', () => {
+					// 	let name = document.querySelector('#add-name-input');
+					// 	if(name.value !== ''){
+					// 		app.names.push(name.value);
+					// 	}
+					// 	name.value = '';
+					// });
 				}
 			});
+
 		</script>
 
 	</body>
