@@ -3,13 +3,26 @@
 	<head>
 		<title>Laracasts - VueJS Step by Step</title>
 		<script type="text/javascript" src="./scripts/vue.js"></script>
+		<style type="text/css">
+			.color-red{
+				color: red;
+			}
+			.color-blue{
+				color: blue;
+			}
+			.is-loading{
+				background: grey;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="root">
 			<input type="text" id="input" v-model="message">
 			<!-- The value in p will be automatically updated -->
 			<p>The value of the input is: {{message}}.</p>
+			
 			<hr>
+
 			<ul>
 				<li v-for="name in names" v-text="name"></li>
 				<!-- Can be like this too -->
@@ -18,8 +31,20 @@
 			<input type="text" v-model="newName">
 			<!-- <button v-on:click="addName">Add Name</button> -->
 			
-			<!-- Using short hand notation -->
+			<!-- Using short-hand notation -->
 			<button @click="addName">Add Name</button>
+
+			<hr>
+
+			<h1 v-bind:class="className">Hello, World!</h1>
+			<button :class="{ 'is-loading': isLoading }" @click="toggleClass">Click Me</button>
+
+			<button v-bind:disabled="isDisabled" title="Hover" @mouseover="toggleDisabled">I am disabled</button>
+
+			<hr>
+			<!-- <button v-bind:title="title">Hover Over Me</button> -->
+			<!-- Using short-hand notation -->
+			<button :title="title">Hover Over Me</button>
 		</div>
 
 		<script type="text/javascript">
@@ -34,13 +59,23 @@
 				data: {
 					newName: '',
 					message: 'Hello, World!',
-					names: ['Joe', 'Mary', 'Jane', 'Jack']
+					names: ['Joe', 'Mary', 'Jane', 'Jack'],
+					title: 'Now the title is being set thhrough Vue',
+					className: 'color-red',
+					isLoading: true,
+					isDisabled: false
 				},
 				methods:{
 					addName(){
 						console.log('Adding name: ' + this.newName);
 						this.names.push(this.newName);
 						this.newName = '';
+					},
+					toggleClass(){
+						this.isLoading = false;
+					},
+					toggleDisabled(){
+						this.isDisabled = !this.isDisabled;
 					}
 				},
 				mounted(){
