@@ -41,6 +41,8 @@
 
 			<button v-bind:disabled="isDisabled" title="Hover" @mouseover="toggleDisabled">I am disabled</button>
 
+			<button :class="{ 'hello': true, 'world': false }">I am an experiment</button>
+
 			<hr>
 			<!-- <button v-bind:title="title">Hover Over Me</button> -->
 			<!-- Using short-hand notation -->
