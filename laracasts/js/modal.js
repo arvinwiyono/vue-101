@@ -1,4 +1,9 @@
 let modal = Vue.component('modal', {
+	data: ()=>{
+		return {
+			modalData: 'This is a default closing text for all modals!'
+		}
+	},
 	// Use emit to communicate with the root scope
 	template: `
 		<div class="modal is-active">
@@ -6,6 +11,8 @@ let modal = Vue.component('modal', {
 			<div class="modal-content">
 				<div class="box">
 					<slot></slot>
+					<p>{{this.modalData}}</p>
+					<p>{{modalData}}</p>
 				</div>
 			</div>
 			<button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
