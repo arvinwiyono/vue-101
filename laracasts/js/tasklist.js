@@ -8,7 +8,7 @@ Vue.component('task-list', {
 		<task v-for="task in tasks">{{task.description}}</task>
 	</div>`,
 	
-	data(){
+	data: () => {
 		return {
 			tasks: [
 				{ description: 'Go to the store', completed: true },
