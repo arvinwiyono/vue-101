@@ -1,5 +1,5 @@
 # budgetapp
-
+Tutorial by [Matthias Hager](https://matthiashager.com/complete-vuejs-application-tutorial)
 > A simple budgeting app
 
 ## Build Setup
