@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Computed Properties</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+	</head>
+	<body>
+		<section class="section">
+
+			<h1 class="title">Computed properties</h1>
+
+			<div class="container" id="vue-app">
+				<div class="field">
+					<button class="button is-primary" @click="a++">Add to A</button>
+					<button class="button is-primary" @click="b++">Add to B</button>
+				</div>
+				<div class="box">
+					<p>A = {{a}}</p>
+					<p>B = {{b}}</p>
+					<!-- This will still trigger addToB() even if B does not change -->
+					<p>Age + A = {{addToA()}}</p>
+					<p>Age + B = {{addToB()}}</p>
+
+					<hr>
+					<!-- Call computed properties as if they were data, only called when A changes or when B changes -->
+					<p>Age + A = {{addToAComputed}}</p>
+					<p>Age + B = {{addToBComputed}}</p>
+					
+				</div>
+			</div>
+
+		</section>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
