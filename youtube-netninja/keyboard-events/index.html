@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Events</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+		<style type="text/css">
+			p{
+				margin-bottom: 2%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section" id="vue-app">
+			<h1 class="title">Keyboard Events</h1>
+			<div class="field">
+				<label class="label">Name:</label>
+				<!-- Using CTRL + ENTER -->
+				<input class="input" type="text" v-bind:placeholder="defaultName" v-on:keyup.ctrl.enter="logName" v-model="name">
+			</div>
+			<div class="field">
+				<label class="label">Age:</label>
+				<!-- Using ALT + ENTER -->
+				<input class="input" type="text" :placeholder="defaultAge" v-on:keyup.alt.enter="logAge" v-model="age">
+			</div>
+		</div>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>

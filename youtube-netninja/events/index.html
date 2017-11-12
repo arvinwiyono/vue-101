@@ -46,16 +46,17 @@
 						<p class="box">My age is {{ age }}</p>
 					</div>
 				</div>
+				<!-- End of columns -->
 
 				<pre id="canvas" @mousemove="updateXY(event)">
 					<p>Tracking mouse movement!</p>
 					<p>X: {{x}}</p>
 					<p>Y: {{y}}</p>
 				</pre>
+				
 				<!-- .prevent prevents the default element behaviour -->
 				<a href="https://www.google.com.au" v-on:click.prevent="click">Google</a>
 			</div>
-			<!-- End of columns -->
 		</div>
 		<script type="text/javascript" src="app.js"></script>
 	</body>
