@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Events</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+		<style type="text/css">
+			p{
+				margin-bottom: 2%;
+			}
+			#canvas{
+				width: 100%;
+				height: 400px;
+				border: 1px solid Grey;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<div class="container" id="vue-app">
+				<h1 class="title is-1">Events</h1>
+				
+				<div class="columns">
+					<div class="column">
+						<p>Accessing the data directly:</p>
+						<button class="button is-primary" v-on:click="incrementAge()">Add a year</button>
+						<button class="button is-light" v-on:click="decrementAge()">Subtract a year</button>
+					</div>
+
+					<!-- Other ways -->
+					<div class="column">
+						<p>Using methods:</p>
+						<button class="button is-primary" v-on:click="age++">Add a year</button>
+						<button class="button is-light" v-on:click="age--">Subtract a year</button>
+					</div>
+
+					<hr>
+
+					<div class="column">
+						<p><strong>Double click!</strong></p>
+						<a class="button is-warning" @dblclick="incrementAge(10)">Add a decade</a>
+						<a class="button is-danger" @dblclick="decrementAge(10)">Subtract a decade</a>
+					</div>
+
+					<div class="column">
+						<p class="box">My age is {{ age }}</p>
+					</div>
+				</div>
+
+				<pre id="canvas" @mousemove="updateXY(event)">
+					<p>Tracking mouse movement!</p>
+					<p>X: {{x}}</p>
+					<p>Y: {{y}}</p>
+				</pre>
+				<!-- End of columns -->
+			</div>
+		</div>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
