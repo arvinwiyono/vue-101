@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Two-Way Data Binding</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+	</head>
+	<body>
+		<section class="section">
+			<h1 class="title">Two-Way Data Binding</h1>
+
+			<div class="container" id="vue-app">
+
+				<div class="field">
+					<label class="label" for="name">Name:</label>
+					<input class="input" id="name" type="text" placeholder="John Smith" v-model="name" v-on:keyup.enter="logName()">
+					<p class="help">Current name: {{name}}</p>
+				</div>
+
+				<div class="field">
+					<label class="label" for="age">Age:</label>
+					<input class="input" id="age" type="text" placeholder="25" v-model="age" v-on:keyup.enter="logAge()"></input>
+					<p class="help">Current age: {{age}}</p>
+				</div>
+				
+			</div>
+
+		</section>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
