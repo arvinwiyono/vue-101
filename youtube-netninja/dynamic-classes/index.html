@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dynamic Classes</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+		<style type="text/css">
+			div.box {
+				font-size: 20pt;
+				color: white;
+				background-color: #a50606;
+			}
+			div.available{
+				background-color: green;
+			}
+			div.nearby > span:after{
+				content: "nearby";
+				margin-left: 10px;
+			}
+			span.tag{
+				position: relative;
+				top: -20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="section" id="vue-app">
+			<h1 class="title is-1">Dynamic CSS</h1>
+
+			<p>Example 1</p>
+			<div class="box" v-bind:class="{available: available, nearby: nearby}">
+				<span>Ryu</span>
+			</div>
+
+			<p>Example 2</p>
+			<div class="box" v-bind:class="compClasses">
+				<span>Ryu</span>
+			</div>
+
+			<a class="button is-dark" v-on:click="available = !available">Toggle Available</a>
+
+			<a class="button is-dark" v-on:click="nearby = !nearby">Toggle Nearby</a>
+		</div>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+</html>
