@@ -4,11 +4,6 @@
 		<title>VueJS Tutorial</title>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
-		<style type="text/css">
-			p{
-				margin-bottom: 2%;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="section" id="vue-app">
@@ -19,38 +14,41 @@
 				<button class="button" @click="success = !success">Toggle Success</button>
 
 				<hr>
-				<p>Using <strong>v-if</strong></p>
-				<article class="message is-danger" v-if="error">
+				<div class="content">
+					
+					<p>Using <strong>v-if</strong></p>
+					<article class="message is-danger" v-if="error">
 
-					<div class="message-header">Error</div>
-					<div class="message-body">There has been an error!</div>
+						<div class="message-header">Error</div>
+						<div class="message-body">There has been an error!</div>
 
-				</article>
-				<!-- Only shows when there is no error and success is set to TRUE -->
-				<article class="message is-success" v-else-if="success">
+					</article>
+					<!-- Only shows when there is no error and success is set to TRUE -->
+					<article class="message is-success" v-else-if="success">
 
-					<div class="message-header">Success</div>
-					<div class="message-body">Your last transaction has been successfully processed!</div>
+						<div class="message-header">Success</div>
+						<div class="message-body">Your last transaction has been successfully processed!</div>
 
-				</article>
+					</article>
 
-				<hr>
-				<p>Using <strong>v-show</strong></p>
-				<!-- The v-show will only hide the element by setting style display to None -->
-				<article class="message is-danger" v-show="error">
+					<hr>
+					<p>Using <strong>v-show</strong></p>
+					<!-- The v-show will only hide the element by setting style display to None -->
+					<article class="message is-danger" v-show="error">
 
-					<div class="message-header">Error</div>
-					<div class="message-body">There has been an error!</div>
+						<div class="message-header">Error</div>
+						<div class="message-body">There has been an error!</div>
 
-				</article>
-				<article class="message is-success" v-show="success">
+					</article>
+					<article class="message is-success" v-show="success">
 
-					<div class="message-header">Success</div>
-					<div class="message-body">Your last transaction has been successfully processed!</div>
+						<div class="message-header">Success</div>
+						<div class="message-body">Your last transaction has been successfully processed!</div>
 
-				</article>
+					</article>
 
-				<p>Only sets display to None</p>
+					<p>Only sets display to <span style="color:grey;">None</span></p>
+				</div>
 
 			</div>
 		</div>
