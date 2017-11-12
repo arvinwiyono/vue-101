@@ -23,14 +23,14 @@
 				<div class="columns">
 					<div class="column">
 						<p>Accessing the data directly:</p>
-						<button class="button is-primary" v-on:click="incrementAge()">Add a year</button>
+						<button class="button is-primary" v-on:click.stop="incrementAge()">Add a year</button>
 						<button class="button is-light" v-on:click="decrementAge()">Subtract a year</button>
 					</div>
 
 					<!-- Other ways -->
 					<div class="column">
 						<p>Using methods:</p>
-						<button class="button is-primary" v-on:click="age++">Add a year</button>
+						<button class="button is-primary" v-on:click.once="age++">Add a year</button>
 						<button class="button is-light" v-on:click="age--">Subtract a year</button>
 					</div>
 
@@ -52,8 +52,10 @@
 					<p>X: {{x}}</p>
 					<p>Y: {{y}}</p>
 				</pre>
-				<!-- End of columns -->
+				<!-- .prevent prevents the default element behaviour -->
+				<a href="https://www.google.com.au" v-on:click.prevent="click">Google</a>
 			</div>
+			<!-- End of columns -->
 		</div>
 		<script type="text/javascript" src="app.js"></script>
 	</body>
