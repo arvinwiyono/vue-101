@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Punchbag Game</title>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<section class="section" id="vue-game">
+			<div class="has-text-centered">
+				<h1 class="title is-1">Bag Punchgame</h1>
+			</div>
+			<div class="container">
+				
+				<!-- bag image -->
+				<div id="bag" v-bind:class="{burst: ended}">
+				</div>
+
+				<!-- bag health -->
+				<div id="bag-health">
+					<div v-bind:style="{width: `${health}%`}"></div>
+				</div>
+
+				<!-- game controls -->
+				<div class="box">
+
+					<div id="controls">
+						<h4 class="title is-4 is-spaced">
+							Controls
+						</h4>
+						<button class="button is-dark" v-on:click="punchBag()" v-bind:disabled="ended">
+							<span class="icon is-small">
+								<i class="fa fa-hand-rock-o"></i>
+							</span>
+							<span>Punch</span>
+						</button>
+						<button class="button is-dark" v-on:click="restartGame()">
+							<span class="icon is-small">
+								<i class="fa fa-repeat"></i>
+							</span>
+							<span>Restart</span>
+						</button>	
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</body>
+</html>
