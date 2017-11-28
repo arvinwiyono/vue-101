@@ -1,27 +1,26 @@
 <template>
   <div>
     <h1 class="title">{{title}}</h1>
-    <p class="subtitle">{{greeting()}}</p>
+    <ninjas></ninjas>
   </div>
 </template>
 
 <script>
+// Here we register the Ninjas component locally, not globally in main.js
+import Ninjas from './Ninjas.vue'
+
 export default {
+  components:{
+    'ninjas': Ninjas
+  },
   data(){
     return {
-      title: 'Your first Vue file, whooo!'
-    }
-  },
-  methods:{
-    greeting: function(){
-      return 'Heyyyyy cowboy.'
+      title: 'Ninja App'
     }
   }
 }
 </script>
 
 <style>
-  p.subtitle{
-    color: green;
-  }
+
 </style>
