@@ -1,9 +1,12 @@
 <template>
 	<div id="app">
-		<app-header></app-header>
-		<p>From App.vue: {{greeting}}</p>
+		<app-header v-bind:title="title" :greeting="greeting" v-on:changeTitle="updateTitle($event)" v-on:changeGreeting="updateGreeting($event)"></app-header>
+
+		<p v-on:changeGreeting="updateGreeting($event)">From App.vue: {{greeting}}</p>
+
 		<app-ninjas v-bind:ninjas="ninjas" :greeting="greeting"></app-ninjas>
-		<app-footer></app-footer>
+
+		<app-footer v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-footer>
 	</div>
 </template>
 
@@ -14,6 +17,8 @@
 	export default{
 		data(){
 			return{
+				title: 'Vue Ninjas',
+				greeting: 'Hello there!',
 				ninjas: [
 					{name: 'Arvin', speciality: 'Slicing fruits', show: false},
 					{name: 'Biondi', speciality: 'Sleeping & eating er day long', show: false},
@@ -21,8 +26,17 @@
 					{name: 'Tango', speciality: 'You wot m8', show: false},
 					{name: 'Kami', speciality: 'Unknown', show: false},
 					{name: 'Yoshi', speciality: 'Not sure', show: false}
-				],
-				greeting: 'Good morning!'
+				]
+			}
+		},
+		methods:{
+			updateGreeting: function(newGreeting){
+				console.log('Updating greeting...');
+				this.greeting = newGreeting;
+			},
+			updateTitle: function(newTitle){
+				console.log('Updating title...');
+				this.title = newTitle;
 			}
 		},
 		components: {

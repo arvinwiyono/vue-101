@@ -6,10 +6,17 @@
 
 <script type="text/javascript">
 	export default{
+		props: ['title'],
 		data(){
 			return{
-				copyright: 'Copyright 2017 Vue Ninjas'
+				
 			}
+		},
+		computed: {
+			copyright: function(){
+				return 'Copyright 2017 ' + this.title;
+			}
+				
 		}
 	}
 </script>
