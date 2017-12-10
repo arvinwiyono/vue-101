@@ -1,7 +1,10 @@
 <template>
-	<ul>
-		<li v-for="ninja in ninjas">{{ninja}}</li>
-	</ul>
+	<div>
+		<h3 class="title is-3">List of ninjas</h3>
+		<ul>
+			<li v-for="ninja in ninjas">{{ninja}}</li>
+		</ul>
+	</div>
 </template>
 
 <script type="text/javascript">
@@ -14,6 +17,9 @@ export default {
 }
 </script>
 
-<style type="text/css">
-	
+<!-- This is gonna scope the styling to its own component -->
+<style type="text/css" scoped>
+	.title{
+		color: green !important;
+	}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title is-1">{{title}}</h1>
     <ninjas></ninjas>
   </div>
 </template>
@@ -22,5 +22,7 @@ export default {
 </script>
 
 <style>
-
+  .title{
+    color: purple !important;
+  }
 </style>
