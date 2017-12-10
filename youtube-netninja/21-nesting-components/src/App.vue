@@ -1,7 +1,8 @@
 <template>
 	<div id="app">
 		<app-header></app-header>
-		<app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+		<p>From App.vue: {{greeting}}</p>
+		<app-ninjas v-bind:ninjas="ninjas" :greeting="greeting"></app-ninjas>
 		<app-footer></app-footer>
 	</div>
 </template>
@@ -20,7 +21,8 @@
 					{name: 'Tango', speciality: 'You wot m8', show: false},
 					{name: 'Kami', speciality: 'Unknown', show: false},
 					{name: 'Yoshi', speciality: 'Not sure', show: false}
-				]
+				],
+				greeting: 'Good morning!'
 			}
 		},
 		components: {
