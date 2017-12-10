@@ -1,5 +1,6 @@
 <template>
 	<div id="ninjas">
+		<!-- <p>{{ninjas}}</p> -->
 		<ul>
 			<li v-for="ninja in ninjas" @click="ninja.show = !ninja.show">
 				<h2>{{ninja.name}}</h2>
@@ -11,16 +12,14 @@
 
 <script type="text/javascript">
 	export default{
+		props: {
+			ninjas: {
+				type: Array
+			}
+		},
 		data(){
 			return{
-				ninjas: [
-					{name: 'Arvin', speciality: 'Slicing fruits', show: false},
-					{name: 'Biondi', speciality: 'Sleeping & eating er day long', show: false},
-					{name: 'Hitoshi', speciality: 'Driving a tuk-tuk', show: false},
-					{name: 'Tango', speciality: 'You wot m8', show: false},
-					{name: 'Kami', speciality: 'Unknown', show: false},
-					{name: 'Yoshi', speciality: 'Not sure', show: false}
-				]
+
 			}
 		}
 	}
