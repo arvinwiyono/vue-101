@@ -9,6 +9,8 @@
 </template>
 
 <script type="text/javascript">
+	import { bus } from "../main";
+
 	export default{
 		props: ['title', 'greeting'],
 		data(){
@@ -18,8 +20,10 @@
 		},
 		methods: {
 			changeTitle: function(){
-				console.log('Changed from Header');
-				this.$emit('changeTitle', 'New Title');
+				// console.log('Changed from Header');
+				// this.$emit('changeTitle', 'New Title');
+				this.title = 'Vue Wizards';
+				bus.$emit('titleChanged', this.title);
 			},
 			changeGreeting: function(){
 				console.log('Changed from Header');

@@ -1,12 +1,12 @@
 <template>
 	<div id="app">
-		<app-header v-bind:title="title" :greeting="greeting" v-on:changeTitle="updateTitle($event)" v-on:changeGreeting="updateGreeting($event)"></app-header>
+		<app-header v-bind:title="title" :greeting="greeting"  v-on:changeGreeting="updateGreeting($event)"></app-header>
 
 		<p v-on:changeGreeting="updateGreeting($event)">From App.vue: {{greeting}}</p>
 
 		<app-ninjas v-bind:ninjas="ninjas" :greeting="greeting"></app-ninjas>
 
-		<app-footer v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-footer>
+		<app-footer v-bind:title="title"></app-footer>
 	</div>
 </template>
 
